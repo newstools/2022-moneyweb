@@ -1,0 +1,66 @@
+Independent investment company Fledge Capital has announced a 25% shareholding in sports and workout supplements brand Ultimate Sports Nutrition (USN). The company holds a R2.3 billion investment portfolio and has preference for consumer brands with wide appeal such as WeBuyFurniture, Oasis Water, King Price, Atterbury Property Investment, BetterBond and Genric Insurance. 
+        poool('config', 'context', 'Article inserts');
+        poool('config', 'widget_container', '#poool-widget');
+        //poool('config', 'user_is_premium', false );
+        //poool('send','page-view', 'free'); Its previous investments included Dis-Chem, WeBuyCars, Burger King and The Club Surgical Centre. International demand According to the two companies, Fledge’s investment will grow USN’s capacity to meet the strong international demand for its high-quality sports nutrition and wellness products. “USN is an extraordinary business. It is an innovative, high-growth venture with a robust business model, attractive markets and data-driven strategies to accelerate sustainable, profitable growth,” according to Fledge Capital co-founders Louis van der Watt and Konrad Fleischhauer. Listen to Suren Naidoo’s interview with Atterbury co-founder Louis van der Watt on his 25 years in property (or read the transcript here):  Fledge Capital has also attracted a shareholding from Patrice Motsepe’s African Rainbow Capital Investments Limited (ARC). However, ARC went through a ‘whittling’ process late last year where 47 of its investments were reduced to 30. Fledge Capital was one of the investments released by the JSE-listed investment firm. USN’s 100% home-grown business with a turnover approaching R2 billion was founded by Albé Geldenhuys in 1999 and provides refined protein and sport supplements. “As a globally trusted name, USN is well positioned for the world’s renewed focus on healthy living,” says Geldenhuys. “The only partner I trust to continue growing and scaling USN with me is one that can add significant long-term value beyond providing growth capital, and that is exactly what Fledge Capital brings to the table.” USN is available in more than 80 countries and has manufacturing facilities on three continents. Palesa Mofokeng is a Moneyweb intern.
+
+                        jQuery(document).on('click', 'a[href*="#to-comments"]', function (event) {
+                            event.preventDefault();
+
+                            jQuery('html, body').animate({
+                                scrollTop: jQuery(jQuery.attr(this, 'href')).offset().top
+                            }, 500);
+                        });
+                        jQuery(document).ready(function () {
+                            jQuery('img[class*="wp-image-"]').bind('click', function () {
+                                jQuery(this.parentElement).lightBox({
+                                    imageLoading: "https://www.moneyweb.co.za/wp-content/themes/moneyweb-domination/images/spinner_moneyweb.gif",
+                                    imageBtnPrev: "https://www.moneyweb.co.za/wp-content/themes/moneyweb-domination/images/bg_direction_nav.png",
+                                    imageBtnNext: "https://www.moneyweb.co.za/wp-content/themes/moneyweb-domination/images/bg_direction_nav.png",
+                                })
+                            });
+
+                            function getSelectedText() {
+                                if (window.getSelection) {
+                                    var range = window.getSelection();
+                                    return range.toString()
+                                }
+                                else {
+                                    if (document.selection.createRange) {
+                                        var range = document.selection.createRange();
+                                        return range.text
+                                    }
+                                }
+                            }
+
+                            function createTweetLink(text, e) {
+
+                                var oldTweetLink = document.getElementById("tweetLink");
+                                if (oldTweetLink != null && typeof oldTweetLink != "undefined") {
+                                    oldTweetLink.parentNode.removeChild(oldTweetLink);
+                                }
+
+                                if (text === "")
+                                    return undefined;
+                                var newTweetLink = document.createElement("a");
+                                newTweetLink.href = "https://twitter.com/intent/tweet?text=" + encodeURI(text) + "&url=https://www.moneyweb.co.za/news/companies-and-deals/fledge-capital-announces-25-investment-in-usn-sports-nutrition-brand/&via=Moneyweb";
+                                newTweetLink.id = "tweetLink";
+                                newTweetLink.target = "_blank";
+                                newTweetLink.innerHTML = '<i class="fa fa-twitter"></i> Tweet';
+                                var appendedTweetLink = document.getElementById("article-body-content").appendChild(newTweetLink);
+                                var x = (e.clientX + 5) + 'px',
+                                    y = (e.clientY + 5) + 'px';
+                                jQuery(appendedTweetLink).css({
+                                    "top": y,
+                                    "left": x
+                                });
+                                return newTweetLink;
+                            }
+
+                            var textParagraph = document.getElementById("textParagraph");
+							if (textParagraph) {
+								textParagraph.addEventListener("mouseup", function (e) {
+									tweetLink = createTweetLink(getSelectedText(), e);
+								}, false);
+							}
+                        });
